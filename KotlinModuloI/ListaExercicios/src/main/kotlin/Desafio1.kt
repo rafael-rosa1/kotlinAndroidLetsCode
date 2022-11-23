@@ -49,7 +49,7 @@ val doces: List<Pair<String, Double>> = listOf(
     Pair(produtoBrigadeiro, valorBrigadeiro),
 )
 
-val menuPrincipal = """
+private val menuPrincipal = """
         1..................Pães
         2..............Salgados
         3.................Doces
