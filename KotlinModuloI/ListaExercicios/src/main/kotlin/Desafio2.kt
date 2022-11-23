@@ -15,16 +15,16 @@ fun main() {
 
 private fun estoqueMecanica() {
     do {
-        println(menuPrincipal)
-        println("ESCOLHA UMA OPÇÃO")
-        val escolhaMenuPrincipal = readln().toInt()
-        when (escolhaMenuPrincipal) {
-            1 -> adicionarItem(ID)
-            2 -> editarItem()
-            3 -> exibirItensEmEstoque()
-            4 -> exibirTodosOsItens()
-            else -> println("Fechando sistema")
-        }
+            println(menuPrincipal)
+            println("ESCOLHA UMA OPÇÃO")
+            val escolhaMenuPrincipal = readln().toInt()
+            when (escolhaMenuPrincipal) {
+                1 -> adicionarItem(ID)
+                2 -> editarItem()
+                3 -> exibirItensEmEstoque()
+                4 -> exibirTodosOsItens()
+                else -> println("Fechando sistema")
+            }
     } while (escolhaMenuPrincipal != 0)
 }
 
@@ -43,10 +43,21 @@ fun editarItem() {
         "QTDE" -> {
             println("Digite a nova quantidade:")
             val novaQuantidade = readln().toInt()
+            if (erroLimiteEstoque(novaQuantidade)) return
             itensEstoque[idEditar] = itensEstoque[idEditar].copy(third = novaQuantidade)
         }
         else -> Unit
     }
+}
+
+private fun erroLimiteEstoque(quantidade: Int): Boolean {
+    try {
+        if (quantidade > 999) throw LimiteEstoqueMaxException()
+    } catch (e: LimiteEstoqueMaxException) {
+        println("Erro: Limite de estoque excedido. (Máx: 999)")
+        return true
+    }
+    return false
 }
 
 fun adicionarItem(id: Int) {
@@ -54,7 +65,7 @@ fun adicionarItem(id: Int) {
     val nomePeca = readln()
     println("Digite a quantidade:")
     val qtdePeca = readln().toInt()
-
+    if (erroLimiteEstoque(qtdePeca)) return
     val item = Triple(id, second = nomePeca, third = qtdePeca)
     itensEstoque.add(item)
     ID++
@@ -71,5 +82,11 @@ fun exibirItensEmEstoque() {
 fun exibirTodosOsItens() {
     itensEstoque.forEach { item ->
         println("#${item.first} | ${item.second} | ${item.third}")
+    }
+}
+
+class LimiteEstoqueMaxException : Exception() {
+    override fun getLocalizedMessage(): String {
+        return "Erro: Limite de estoque excedido. (Máx: 999)"
     }
 }
