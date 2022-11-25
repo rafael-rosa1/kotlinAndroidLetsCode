@@ -23,31 +23,48 @@ private fun estoqueMecanica() {
                 2 -> editarItem()
                 3 -> exibirItensEmEstoque()
                 4 -> exibirTodosOsItens()
-                else -> println("Fechando sistema")
+                0 -> println("Fechando sistema")
+                else -> println("OPÇÃO INVÁLIDA TENTE NOVAMENTE")
             }
     } while (escolhaMenuPrincipal != 0)
 }
 
 fun editarItem() {
+    try {
     println("Digite o ID do produto a ser editado")
     var idEditar = readln().toInt()
+    if (idEditar > itensEstoque.size) throw IndexOutOfBoundsException()
     idEditar--
-    println("Editar nome ou quantidade? (NOME/QTDE)")
-    val escolhaEdicao = readln().uppercase()
-    when(escolhaEdicao) {
-        "NOME" -> {
-            println("Digite o novo nome:")
-            val novoNome = readln()
-            itensEstoque[idEditar] = itensEstoque[idEditar].copy(second = novoNome)
+        println("Editar nome ou quantidade? (NOME/QTDE)")
+        val escolhaEdicao = readln().uppercase()
+//        if(escolhaEdicao !=)
+        when(escolhaEdicao) {
+            "NOME" -> {
+                println("Digite o novo nome:")
+                val novoNome = readln()
+                itensEstoque[idEditar] = itensEstoque[idEditar].copy(second = novoNome)
+            }
+            "QTDE" -> {
+                try {
+                    println("Digite a nova quantidade:")
+                    val novaQuantidade = readln().toInt()
+                    if (erroLimiteEstoque(novaQuantidade)) return
+                    itensEstoque[idEditar] = itensEstoque[idEditar].copy(third = novaQuantidade)
+                } catch (e: NumberFormatException) {
+                    println("Erro: Quantidade precisa ser um numero inteiro")
+                }
+            }
+            else -> Unit
         }
-        "QTDE" -> {
-            println("Digite a nova quantidade:")
-            val novaQuantidade = readln().toInt()
-            if (erroLimiteEstoque(novaQuantidade)) return
-            itensEstoque[idEditar] = itensEstoque[idEditar].copy(third = novaQuantidade)
-        }
-        else -> Unit
+    }catch (e: java.lang.IndexOutOfBoundsException) {
+        println("Erro: ID não encontrado no estoque!")
+        return
+    } catch (e: NumberFormatException) {
+        println("Erro: ID precisa ser um número inteiro!")
+        return
     }
+
+
 }
 
 private fun erroLimiteEstoque(quantidade: Int): Boolean {
@@ -56,6 +73,8 @@ private fun erroLimiteEstoque(quantidade: Int): Boolean {
     } catch (e: LimiteEstoqueMaxException) {
         println("Erro: Limite de estoque excedido. (Máx: 999)")
         return true
+    } catch (e: NumberFormatException) {
+        println("Erro: Quantidade precisa ser um numero inteiro")
     }
     return false
 }
@@ -64,11 +83,17 @@ fun adicionarItem(id: Int) {
     println("Digite o nome da peça:")
     val nomePeca = readln()
     println("Digite a quantidade:")
-    val qtdePeca = readln().toInt()
-    if (erroLimiteEstoque(qtdePeca)) return
-    val item = Triple(id, second = nomePeca, third = qtdePeca)
-    itensEstoque.add(item)
-    ID++
+    try {
+        val qtdePeca = readln().toInt()
+        if (erroLimiteEstoque(qtdePeca)) return
+        val item = Triple(id, second = nomePeca, third = qtdePeca)
+        itensEstoque.add(item)
+        ID++
+    } catch (e: NumberFormatException) {
+        println("Erro: Quantidade precisa ser um numero inteiro")
+    }
+
+
 }
 
 fun exibirItensEmEstoque() {
