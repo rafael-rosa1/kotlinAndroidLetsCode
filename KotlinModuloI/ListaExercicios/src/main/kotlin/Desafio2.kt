@@ -14,10 +14,13 @@ fun main() {
 }
 
 private fun estoqueMecanica() {
-    do {
+    var escolhaMenuPrincipal: Int
+    try {
+        do {
             println(menuPrincipal)
             println("ESCOLHA UMA OPÇÃO")
-            val escolhaMenuPrincipal = readln().toInt()
+
+            escolhaMenuPrincipal = readln().toInt()
             when (escolhaMenuPrincipal) {
                 1 -> adicionarItem(ID)
                 2 -> editarItem()
@@ -26,7 +29,12 @@ private fun estoqueMecanica() {
                 0 -> println("Fechando sistema")
                 else -> println("OPÇÃO INVÁLIDA TENTE NOVAMENTE")
             }
-    } while (escolhaMenuPrincipal != 0)
+        } while (escolhaMenuPrincipal != 0)
+    }catch (e: NumberFormatException) {
+        println("Erro: Escolha uma das opções do menu principal")
+        estoqueMecanica()
+    }
+
 }
 
 fun editarItem() {
@@ -37,7 +45,6 @@ fun editarItem() {
     idEditar--
         println("Editar nome ou quantidade? (NOME/QTDE)")
         val escolhaEdicao = readln().uppercase()
-//        if(escolhaEdicao !=)
         when(escolhaEdicao) {
             "NOME" -> {
                 println("Digite o novo nome:")
@@ -54,7 +61,7 @@ fun editarItem() {
                     println("Erro: Quantidade precisa ser um numero inteiro")
                 }
             }
-            else -> Unit
+            else -> println("Opção Inválida, USE NOME OU QTDE")
         }
     }catch (e: java.lang.IndexOutOfBoundsException) {
         println("Erro: ID não encontrado no estoque!")
