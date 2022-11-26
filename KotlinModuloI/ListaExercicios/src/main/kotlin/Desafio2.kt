@@ -47,9 +47,15 @@ fun editarItem() {
         val escolhaEdicao = readln().uppercase()
         when(escolhaEdicao) {
             "NOME" -> {
-                println("Digite o novo nome:")
-                val novoNome = readln()
-                itensEstoque[idEditar] = itensEstoque[idEditar].copy(second = novoNome)
+                try {
+                    println("Digite o novo nome:")
+                    val novoNome = readln()
+                    if(novoNome == "") throw NullPointerException()
+                    itensEstoque[idEditar] = itensEstoque[idEditar].copy(second = novoNome)
+                } catch (e: NullPointerException) {
+                    println("Erro: Digite o nome da peça")
+                }
+
             }
             "QTDE" -> {
                 try {
@@ -87,10 +93,12 @@ private fun erroLimiteEstoque(quantidade: Int): Boolean {
 }
 
 fun adicionarItem(id: Int) {
-    println("Digite o nome da peça:")
-    val nomePeca = readln()
-    println("Digite a quantidade:")
+
     try {
+        println("Digite o nome da peça:")
+        val nomePeca = readln()
+        if (nomePeca == "") throw NullPointerException()
+        println("Digite a quantidade:")
         val qtdePeca = readln().toInt()
         if (erroLimiteEstoque(qtdePeca)) return
         val item = Triple(id, second = nomePeca, third = qtdePeca)
@@ -98,6 +106,8 @@ fun adicionarItem(id: Int) {
         ID++
     } catch (e: NumberFormatException) {
         println("Erro: Quantidade precisa ser um numero inteiro")
+    } catch (e: NullPointerException) {
+        println("Erro: Digite o nome da peça")
     }
 
 
