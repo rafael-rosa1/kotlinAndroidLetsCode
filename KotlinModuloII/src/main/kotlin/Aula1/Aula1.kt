@@ -2,9 +2,8 @@ package Aula1
 
 import java.text.NumberFormat
 import java.util.*
-import javax.sql.ConnectionPoolDataSource
 
-class Funcionario(
+class Funcionario1(
     val id: Int,
     var nome: String,
     var sobrenome: String,
@@ -51,7 +50,7 @@ class Funcionario(
         if(this === other) return true
         if(javaClass != other?.javaClass) return false
 
-        other as Funcionario
+        other as Funcionario1
 
         if(cpf != other.cpf) return false
 
@@ -77,7 +76,7 @@ class Funcionario(
     }
 }
 fun main() {
-    val jose: Funcionario = Funcionario(
+    val jose: Funcionario1 = Funcionario1(
         0,
         "Joao",
         "Silva",
@@ -86,7 +85,7 @@ fun main() {
         1000.0
     )
 
-    val funcionario2 = Funcionario("Rafael", "Rosa", "123123123")
+    val funcionario2 = Funcionario1("Rafael", "Rosa", "123123123")
     jose.definirCargo("Gerente", 10_000.0)
     println(funcionario2.nome)
 
