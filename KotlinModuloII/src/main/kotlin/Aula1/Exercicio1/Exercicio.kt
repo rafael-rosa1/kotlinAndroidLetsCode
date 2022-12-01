@@ -2,7 +2,7 @@ package Aula1
 
 import Aula1.Exercicio1.Empresa
 import Aula1.Exercicio1.Endereco
-import Aula1.Exercicio1.Funcionario
+import Aula1.Exercicio1.Funcionario2
 
 
 fun main() {
@@ -22,7 +22,7 @@ fun main() {
         "128937192873"
     )
 
-    val jose = Funcionario(
+    val jose = Funcionario2(
         "Jose",
         "3123123",
         endereco1,
@@ -32,7 +32,7 @@ fun main() {
         "Gerente"
     )
 
-    val maria = Funcionario(
+    val maria = Funcionario2(
         "Maria",
         "312233123",
         endereco1,

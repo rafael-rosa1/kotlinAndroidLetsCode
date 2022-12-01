@@ -3,7 +3,7 @@ package Aula1.Exercicio1
 import java.text.NumberFormat
 import java.util.*
 
-class Funcionario(
+class Funcionario2(
     val nome: String,
     val cpf: String,
     var endereco: Endereco,
