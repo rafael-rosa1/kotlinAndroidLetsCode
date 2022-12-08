@@ -2,7 +2,11 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula1/Exemplos1/Aula1.kt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula1/Exemplos1/Aula1.kt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula2/Relembrando/Relembrando.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula3/Revisao/Relembrando2.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula4/extensao/extensaoPropriedades.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula5/exemplos/ContaBancaria.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula5/exemplos/ValidacaoFuncionario.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula5/exercicios/Carteira.kt" charset="UTF-8" />
   </component>
 </project>

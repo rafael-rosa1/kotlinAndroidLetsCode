@@ -1,6 +1,6 @@
 package Aula2.Relembrando
 
-class Funcionario(
+class Funcionario3(
     val nome: String,
     val sobrenome: String,
     var cargo: String,
@@ -17,10 +17,10 @@ class Empresa(
     val nome: String,
     val cnpj: String,
     val segmento: String,
-    private val listaFuncionarios: MutableList<Funcionario> = mutableListOf()
+    private val listaFuncionarios: MutableList<Funcionario3> = mutableListOf()
 ) {
 
-    fun inserirFuncionario(funcionario: Funcionario) {
+    fun inserirFuncionario(funcionario: Funcionario3) {
 
         listaFuncionarios.add(funcionario)
 
@@ -60,7 +60,7 @@ fun main() {
 
     val santander = Empresa("Santander", "123872918037", "Banco")
 
-    val joaoDaSilva = Funcionario("João", "da Silva", "Gerente", 6000.0)
+    val joaoDaSilva = Funcionario3("João", "da Silva", "Gerente", 6000.0)
 
     santander.inserirFuncionario(joaoDaSilva)
     santander.mostrarFuncionarios()

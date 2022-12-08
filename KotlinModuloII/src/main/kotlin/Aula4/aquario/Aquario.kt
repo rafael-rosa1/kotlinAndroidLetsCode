@@ -1,0 +1,35 @@
+package Aula4.aquario
+
+data class Peixe(val nome: String, val cor: String, val tamanho: String)
+
+class Aquario(val peixes: MutableList<Peixe> = mutableListOf(), var aquarioLimpo: Boolean = true) {
+    
+    companion object {
+       const val multiploPeixes = 3
+    }
+
+    val qtdePeixes = peixes.size - 1
+    fun adicionarPeixe(peixe: Peixe) {
+        if (aquarioLimpo && qtdePeixes % multiploPeixes != 0) {
+            peixes.add(peixe)
+        } else {
+            println("Limpe o aquário antes de adicionar mais peixes")
+        }
+
+        fun limpaAquario() {
+            aquarioLimpo = true
+        }
+
+        fun alimentarPeixes() {
+            val qtdeAlimento = (1..3).random()
+            when (qtdeAlimento) {
+                1 -> println("Nenhum peixe se alimentou")
+                2 -> {
+                    val qtdePeixes = (1 until peixes.size).random()
+                    println("$qtdePeixes se alimentaram")
+                }
+                else -> println("Todos os peixes se alimentaram")
+            }
+        }
+    }
+}
