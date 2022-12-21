@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula1/Exemplos1/Aula1.kt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula2/Relembrando/Relembrando.kt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula3/Revisao/Relembrando2.kt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula4/extensao/extensaoPropriedades.kt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula5/exemplos/ContaBancaria.kt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula5/exemplos/ValidacaoFuncionario.kt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/kotlin/Aula5/exercicios/Carteira.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula1/Exemplos1/Aula1.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula2/Relembrando/Relembrando.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula3/Revisao/Relembrando2.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula4/extensao/extensaoPropriedades.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula5/exemplos/ContaBancaria.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula5/exemplos/ValidacaoFuncionario.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula5/exercicios/Carteira.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula7/objetosAnonimos/objAnonimo.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula7/sealedClass/BuscaUsuario.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula8/exercicio/Questao.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/aula8/generics/CalculadoraGenerica.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/cursoExtraPOO/carro/Carro.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/cursoExtraPOO/carro/Motor.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/cursoExtraPOO/carro/MotorCombustao.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/cursoExtraPOO/carro/MotorEletrico.kt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/kotlin/cursoExtraPOO/cursoExtra.kt" charset="UTF-8" />
   </component>
 </project>
