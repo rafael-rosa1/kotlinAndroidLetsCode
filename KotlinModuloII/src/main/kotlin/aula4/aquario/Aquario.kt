@@ -12,6 +12,7 @@ class Aquario(val peixes: MutableList<Peixe>, var aquarioLimpo: Boolean = true) 
         if (aquarioLimpo && qtdePeixes % multiploPeixes != 0) {
             peixes.add(peixe)
         } else {
+            aquarioLimpo = false
             println("Limpe o aquário antes de adicionar mais peixes")
         }
 
@@ -25,7 +26,7 @@ class Aquario(val peixes: MutableList<Peixe>, var aquarioLimpo: Boolean = true) 
                 1 -> println("Nenhum peixe se alimentou")
                 2 -> {
                     val qtdePeixes = (1 .. peixes.size).random()
-                    println("$qtdePeixes se alimentaram")
+                    println("Parcial $qtdePeixes se alimentaram")
                 }
                 else -> println("Todos os peixes se alimentaram")
             }
