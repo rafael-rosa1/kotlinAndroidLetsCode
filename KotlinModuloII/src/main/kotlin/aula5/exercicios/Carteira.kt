@@ -8,7 +8,7 @@ fun Double.formataMonetario(): String {
     return NumberFormat.getCurrencyInstance(Locale.getDefault()).format(this)
 }
 
-class Cliente(val nome: String, val sobrenome: String, private var senha: Int) {
+class Cliente2(val nome: String, val sobrenome: String, private var senha: Int) {
 
     private var saldo = 0.0
     fun buscarSaldo(): Double {
@@ -27,7 +27,7 @@ class Cliente(val nome: String, val sobrenome: String, private var senha: Int) {
         }
     }
 
-    inner class Carteira(private var senhaDaCarteira: Int) {
+    inner class Carteira2(private var senhaDaCarteira: Int) {
 
         var saldoCarteira: Double = saldo
 
@@ -58,9 +58,9 @@ class Cliente(val nome: String, val sobrenome: String, private var senha: Int) {
 }
 
 fun main() {
-    val clienteRafael = Cliente("Rafael", "Rosa", 123456)
+    val clienteRafael = Cliente2("Rafael", "Rosa", 123456)
 
-    val carteiraRafael = clienteRafael.Carteira(123456)
+    val carteiraRafael = clienteRafael.Carteira2(123456)
 
 
     println(clienteRafael.buscarSaldo().formataMonetario())

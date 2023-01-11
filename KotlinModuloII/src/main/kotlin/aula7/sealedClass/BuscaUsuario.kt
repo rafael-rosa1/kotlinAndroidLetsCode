@@ -1,6 +1,5 @@
 package aula7.sealedClass
 
-import aula7.Carteira
 import aula7.sealedClass.ResultadoBuscaUsuario.*
 import kotlin.random.Random
 
