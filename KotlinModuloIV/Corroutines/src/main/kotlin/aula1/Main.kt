@@ -1,13 +1,12 @@
-
+package aula1
 import kotlinx.coroutines.*
-import kotlin.system.measureTimeMillis
 
-//fun main()  {
+//fun aula1.main()  {
 //
 //    val tempo = measureTimeMillis {
-//        val soma1 = soma(10, 2)
-//        val soma2 = soma(9, 8)
-//        val soma3 = soma(9, 11)
+//        val soma1 = aula1.soma(10, 2)
+//        val soma2 = aula1.soma(9, 8)
+//        val soma3 = aula1.soma(9, 11)
 //
 //        println("T1: $soma1")
 //        println("T2: $soma2")
@@ -26,14 +25,14 @@ fun main() = runBlocking {
 
 
 //    val tempo = measureTimeMillis {
-//        launch { cumprimenta("Rafael") }
+//        launch { aula1.cumprimenta("Rafael") }
 //    }
 //    print("Olá, boa noite ")
 //    println()
 //    println("$tempo ms")
 //    val tempo = measureTimeMillis {
-//        val soma1 = async { soma(10,2) }
-//        val soma2 = async { soma(10,10) }
+//        val soma1 = async { aula1.soma(10,2) }
+//        val soma2 = async { aula1.soma(10,10) }
 //
 //        println("T1: ${soma1.await()}")
 //        println("T2: ${soma2.await()}")
