@@ -1,8 +1,6 @@
 package execicioRegex
 
 fun main() {
-
-
     val patternNome = Regex("[a-zA-Z\\s]+")
     val patternIdade = Regex("[0-9]{2}")
     val patternEmail = Regex("^[A-Za-z](.*)(@)(.+)(\\.)(.+)")
@@ -15,13 +13,10 @@ fun main() {
         val nome = readln()
     } while (!nome.matches(patternNome))
 
-
     do {
         print("Informe sua idade: ")
         val idade = readln()
     } while (!idade.matches(patternIdade))
-
-
 
     do {
         print("Informe seu email: ")
@@ -34,5 +29,4 @@ fun main() {
     } while (!senha.matches(patternSenha))
 
     println("Cadastro Finalizado, muito obrigado!")
-
 }
